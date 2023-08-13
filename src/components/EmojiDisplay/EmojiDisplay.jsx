@@ -25,9 +25,10 @@ const EmojiDisplay = ({ query, isSearch }) => {
                 key={index}
                 className={styles.listContainer}
                 style={
-                  value.tags.includes(query)
+                  value.tags.includes(query) ||
+                  (value.aliases.includes(query)
                     ? { display: "block" }
-                    : { display: "none" }
+                    : { display: "none" })
                 }
               >
                 <span> {value.emoji}</span>
